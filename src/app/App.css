@@ -1,0 +1,12 @@
+#page-header {
+  margin-bottom: 1.5em;
+}
+
+#page-footer {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+#page-header .secondary .right .item {
+  font-size: 1.33em;
+}
