@@ -9,11 +9,13 @@ interface IPostSummaryListProps {
 }
 
 function PostSummaryList(props: IPostSummaryListProps) {
-  const listItems = props.posts.map(post => (
-    <PostSummary key={post.post_id} post={post} />
-  ));
-
-  return <List className="divided rnb-psl">{listItems}</List>;
+  return (
+    <List className="divided rnb-psl">
+      {props.posts.map(post => (
+        <PostSummary key={post.post_id} post={post} />
+      ))}
+    </List>
+  );
 }
 
 export default PostSummaryList;
