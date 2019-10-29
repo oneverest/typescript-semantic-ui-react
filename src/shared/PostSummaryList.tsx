@@ -12,7 +12,7 @@ function PostSummaryList(props: IPostSummaryListProps) {
   return (
     <List className="divided rnb-psl">
       {props.posts.map(post => (
-        <PostSummary key={post.post_id} post={post} />
+        <PostSummary key={post.post_id} {...post} />
       ))}
     </List>
   );

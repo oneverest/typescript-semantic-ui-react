@@ -1,21 +1,29 @@
 import * as React from "react";
 import { Header, ListItem } from "semantic-ui-react";
-import { Post } from "global.d";
+import PropTypes from "prop-types";
 
 interface IPostSummaryProps {
-  post: Post;
+  title: string;
+  created_at: string;
+  content: string;
 }
 
-function PostSummary(props: IPostSummaryProps) {
+const PostSummary = ({ title, created_at, content }: IPostSummaryProps) => {
   return (
     <ListItem className="rnb-psl__elem">
       <Header className="large">
-        <Header.Content>{props.post.title}</Header.Content>
-        <Header.Subheader>{props.post.created_at}</Header.Subheader>
+        <Header.Content>{title}</Header.Content>
+        <Header.Subheader>{created_at}</Header.Subheader>
       </Header>
-      <p>{props.post.content}</p>
+      <p>{content}</p>
     </ListItem>
   );
-}
+};
+
+PostSummary.propTypes = {
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  created_at: PropTypes.string.isRequired
+};
 
 export default PostSummary;

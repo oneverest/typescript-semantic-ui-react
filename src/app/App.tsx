@@ -6,6 +6,7 @@ import PageHeader from "./PageHeader";
 import PageFooter from "./PageFooter";
 import Home from "home/Home";
 import About from "about/About";
+import Articles from "articles/Articles";
 
 interface IAppState {
   isLogin: boolean;
@@ -31,21 +32,21 @@ export class App extends React.Component<any, IAppState, any> {
   }
 
   render() {
+    console.log("app component");
     return (
-      <div>
-        <Router>
-          <PageHeader></PageHeader>
-          <Container id="main" className="text basic segment">
-            {/* <React.Suspense fallback={<div>loading....</div>}> */}
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/about" exact component={About} />
-            </Switch>
-            {/* </React.Suspense> */}
-          </Container>
-          <PageFooter />
-        </Router>
-      </div>
+      <Router>
+        <PageHeader></PageHeader>
+        <Container id="main" className="text basic segment">
+          {/* <React.Suspense fallback={<div>loading....</div>}> */}
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" exact component={About} />
+            <Route path="/articles" exact component={Articles} />
+          </Switch>
+          {/* </React.Suspense> */}
+        </Container>
+        <PageFooter />
+      </Router>
     );
   }
 }
